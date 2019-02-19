@@ -29,18 +29,18 @@ sents = list(doc.sents)
 def get_reply(question):
   question = nlp(question)
   similarities = [
-    (sent.similarity(question), sent)
+    dict(similarity=sent.similarity(question), message=sent.text)
     for sent in sents
   ]
-  similarities = sorted(similarities, reverse=True)
+  similarities = sorted(similarities, reverse=True, key=lambda x: x['similarity'])
   return similarities[0]
 
-while True:
-  next_question = input("> ")
-  next_reply = get_reply(next_question)
-  print(str(next_reply[1]).replace('\n', ' '))
-  print(next_reply[0])
-  print()
+# while True:
+#   next_question = input("> ")
+#   next_reply = get_reply(next_question)
+#   print(str(next_reply[1]).replace('\n', ' '))
+#   print(next_reply[0])
+#   print()
 
 # print(my_sent)
 
