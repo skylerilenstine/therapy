@@ -8,6 +8,8 @@ import spacy
 nlp = spacy.load('en_core_web_sm', disable=['ner', 'tagger', 'textcat'])
 
 print('Downloading text...')
+# Household Gods by Aleister Crowley
+# https://www.gutenberg.org/ebooks/14040
 text = strip_headers(load_etext(14040)).strip()
 
 print('Analyzing text...')
