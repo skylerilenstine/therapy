@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <style type="text/css">
+      #message-input {
+        width: 800px;
+      }
+      #message-reply {
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Ask a question...</p>
+    <input id="message-input" type="text" onkeydown="sendMessage(event)" placeholder="Please describe your problem to the dead.">
+    <div id="message-reply"></div>
+  </body>
+  <script src="main.js"></script>
+</html>
